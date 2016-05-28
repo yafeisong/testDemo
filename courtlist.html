@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=百度密钥&v=1.0"></script>			
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title>高尔夫-球场</title>
+		<script type="text/javascript" src="../js/app/golfcommon_newui.js"></script>
+		<script type="text/javascript" src="../js/bussjs/courtlist.js"></script>
+	</head>
+	<body>
+		<div style="display: none;">
+			<input type="hidden" id="province" value="" />
+			<input type="hidden" id="lng" value="" />
+			<input type="hidden" id="lat" value="" />
+		</div>
+		<heade class="pos-f left6 top0 right6 z-index100 bg-00b050 border-71daa0 tc pos-r ht34 l-ht34 font16" style="border-top-right-radius: 8px;border-top-left-radius: 8px;">
+			<span class="font-white">球场</span>
+			<img src="../img/app/golf/qc_dingwei.png" class="pos-a w-14 ht16 top8 left12" id="dingwei" />
+			<span id="currdingwei" class="font-white font12 pos-a left30 l-ht34">定位中..</span>
+		</heade>
+		<div class="container-fluid" style="border-top: 3.833rem solid transparent;border-bottom: 3.5rem solid transparent;">
+			<div class="row">
+				<div class="col12">
+					<div class="pl6 pr6">
+						<ul class="list-unStyle per100 overflow-h" id="qcList"> 
+
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--省市区列表S-->
+		<ul id="provincelist" class="list-unStyle w-80 pos-f pt10 radius5 bg-0d1d38 top46 display-n border-00b050 z-index999" style="overflow-y: auto;">
+		
+		</ul>
+		<!--省市区列表N-->
+	    <!--底部导航S-->
+		<foot class="pos-f left6 right6 bottom0 overflow-h z-index100" style="background: #e6f7ed;-webkit-border-top-left-radius: 8px;-webkit-border-top-right-radius: 8px;">
+			<div class="ht42 border-38495c">
+				<ul class="per100 list-unStyle overflow-h">
+					<li onclick="toCourt();" class="ht42 fl per25 tc">
+						<div class="pt4 ht100p">
+							<img src="../img/app/golf/foot_jf.png" class="w-20 ht20" />
+							<img src="../img/app/golf/foot_jf02.png" class="w-20 ht20 display-n" />
+							<div class="mt0 mb0 font-0d1d38 tc l-ht0 pt4 font-yahei">记分</div>
+						</div>
+					</li>
+					<li class="ht42 fl per25 tc bg-0d1d38" style="-webkit-border-top-left-radius: 8px;-webkit-border-top-right-radius: 8px;"> 
+						<div class="pt4 ht100p">
+							<img src="../img/app/golf/foot_cd.png" class="w-20 ht20 display-n" />
+							<img src="../img/app/golf/foot_cd02.png" class="w-20 ht20" />
+							<div class="mt0 mb0 font-white tc l-ht0 pt4 font-yahei">场地</div>
+						</div>
+					</li>
+					<li onclick="toDongtai();" class="ht42 fl per25 tc">
+						<div class="pt4 ht100p pos-r">
+							<img src="../img/app/golf/foot_qyq02.png" class="w-20 ht20" />
+							<img src="../img/app/golf/foot_qyq.png" class="w-20 ht20 display-n" />
+							<div class="mt0 mb0 font-0d1d38 tc l-ht0 pt4 font-yahei">球友圈</div>
+							<!--消息提示红点带数字S-->
+							<div class="w-14 ht14 tc l-ht16 font10 font-white radius-circle bg-a84848 pos-a top2 right18 display-n">1</div>
+							<!--消息提示红点带数字N-->
+						</div>
+					</li>
+					<li onclick="toProfile();"  class="ht42 fl per25 tc">
+						<div class="pt4 ht100p">
+							<img src="../img/app/golf/foot_gr.png" class="w-20 ht20" />
+							<img src="../img/app/golf/foot_gr02.png" class="w-20 ht20 display-n" />
+							<div class="mt0 mb0 font-0d1d38 tc l-ht0 pt4 font-yahei">个人</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</foot>
+		<!--底部导航N-->
+		
+		<!--透明弹出层S-->
+		<div class="pos-f per100 left0 top0 ht100p bg-white z-index1 display-n" style="opacity: 0;" id="toumingDiv"></div>
+		<!--透明弹出层N-->
+		
+	</body>
+	
+</html>
